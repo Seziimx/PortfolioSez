@@ -2,7 +2,7 @@ from flask import Flask, request, jsonify, send_from_directory, render_template
 import os
 import requests
 
-app = Flask(__name__, static_folder='c:\\Users\\ronin\\Downloads\\Portfolio Webpage Example', static_url_path='')
+app = Flask(__name__, static_folder='.', static_url_path='')
 
 # Маршрут для главной страницы
 @app.route('/')
