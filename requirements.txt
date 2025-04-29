@@ -1,3 +1,3 @@
-express
-dotenv
-node-fetch
+flask
+requests
+python-dotenv
