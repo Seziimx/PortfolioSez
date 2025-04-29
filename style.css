@@ -124,7 +124,10 @@ main {
     box-shadow: var(--shadow1);
     z-index: 1;
 }
-
+img[alt="avatar"] {
+    border-radius: 30px; /* или 20px для ещё большей округлости */
+    object-fit: cover;
+}
     .icon-box::before {
         content: '';
         position: absolute;
