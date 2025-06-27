@@ -1,13 +1,13 @@
-from flask import Flask, request, jsonify, send_from_directory, render_template
+from flask import Flask, render_template, request, jsonify, send_from_directory
 import os
 import requests
 
-app = Flask(__name__, static_folder='.', static_url_path='')
+app = Flask(__name__)
 
-# Маршрут для главной страницы
 @app.route('/')
 def index():
-    return send_from_directory(app.static_folder, 'index.html')
+    return render_template('index.html')
+
 
 # Маршрут для отправки сообщений в Telegram
 @app.route('/send-message', methods=['POST'])
@@ -35,6 +35,5 @@ def send_message():
         return jsonify({'error': 'An error occurred.'}), 500
 
 # Запуск сервера
-if __name__ == '__main__':
-    port = int(os.getenv('PORT', 3000))
-    app.run(host='0.0.0.0', port=port)
+if __name__ == "__main__":
+    app.run(debug=True)
