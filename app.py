@@ -4,10 +4,10 @@ import requests
 
 app = Flask(__name__)
 
-# Отдаём index.html из корня проекта
+# Маршрут для главной страницы
 @app.route('/')
 def index():
-    return send_from_directory('.', 'index.html')
+    return send_from_directory(app.static_folder, 'index.html')
 
 
 # Маршрут для отправки сообщений в Telegram
